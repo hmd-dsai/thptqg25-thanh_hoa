@@ -1,0 +1,16 @@
+from pathlib import Path
+import pandas as pd
+
+# Ensure code runs regardless of CWD
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
+
+# Read Excel sheets and merge
+in_path = DATA / "raw" / "ket_qua_thptqg_2025_ct2018.xlsx"
+sheet1 = pd.read_excel(in_path, sheet_name=0, header=0)
+sheet2 = pd.read_excel(in_path, sheet_name=1, header=0)
+merged = pd.concat([sheet1, sheet2], ignore_index=True)
+
+# Return merged CSV file
+out_path = DATA / "raw" / "raw.csv"
+merged.to_csv(out_path, index=False)
