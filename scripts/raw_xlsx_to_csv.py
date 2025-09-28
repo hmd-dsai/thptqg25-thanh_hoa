@@ -7,8 +7,8 @@ DATA = ROOT / "data"
 
 # Read Excel sheets and merge
 in_path = DATA / "raw" / "ket_qua_thptqg_2025_ct2018.xlsx"
-sheet1 = pd.read_excel(in_path, sheet_name=0, header=0)
-sheet2 = pd.read_excel(in_path, sheet_name=1, header=0)
+sheet1 = pd.read_excel(in_path, sheet_name=0, header=0, dtype={"SOBAODANH": str}) # Ensure leading zeros are not dropped
+sheet2 = pd.read_excel(in_path, sheet_name=1, header=0, dtype={"SOBAODANH": str})
 merged = pd.concat([sheet1, sheet2], ignore_index=True)
 
 # Return merged CSV file
