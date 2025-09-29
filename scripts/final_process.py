@@ -17,13 +17,13 @@ DATA = ROOT / "data"
 
 # Read preprocessed data
 in_path = DATA / "raw" / "preprocessed.csv"
-pre = pd.read_csv(in_path, dtype={"SBD": str})
+pre = pd.read_csv(in_path, dtype={"SBD": str, "MA_TINH": str})
 
 # Extract data with province code = 28 (Thanh Hoa province)
-processed = pre[pre["MA_TINH"] == 28]
+processed = pre[pre["MA_TINH"] == '28']
 
 # Dropping subjects with few students registering
-processed = pre.drop(columns=[
+processed = processed.drop(columns=[
     "TIN",
     "CNNN",
     "CNCN",
@@ -34,6 +34,8 @@ processed = pre.drop(columns=[
     "T_PHAP",
     "T_TRUNG"
 ])
+
+print(processed.head())
 
 # Return final processed CSV file
 out_path = DATA / "processed" / "thanhhoa_processed.csv"
