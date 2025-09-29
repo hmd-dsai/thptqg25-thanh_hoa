@@ -35,7 +35,12 @@ processed = processed.drop(columns=[
     "T_TRUNG"
 ])
 
-print(processed.head())
+# Add columns for total scores of common subject combinations (khối thi)
+processed["A00"] = processed[["TOAN", "LI", "HOA"]].sum(axis=1, min_count=3)
+processed["A01"] = processed[["TOAN", "LI", "T_ANH"]].sum(axis=1, min_count=3)
+processed["B00"] = processed[["TOAN", "HOA", "SINH"]].sum(axis=1, min_count=3)
+processed["C00"] = processed[["VAN", "SU", "DIA"]].sum(axis=1, min_count=3)
+processed["D01"] = processed[["TOAN", "VAN", "T_ANH"]].sum(axis=1, min_count=3)
 
 # Return final processed CSV file
 out_path = DATA / "processed" / "thanhhoa_processed.csv"
