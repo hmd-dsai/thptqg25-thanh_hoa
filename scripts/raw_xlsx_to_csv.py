@@ -1,3 +1,17 @@
+# ---------------------------------------------------------------------------
+# PREREQUISITES:
+# ---------------------------------------------------------------------------
+# 1. Download the raw XLSX dataset:
+#   https://baochinhphu.vn/8h-sang-16-7-tra-cuu-diem-thi-tot-nghiep-thpt-nam-2025-tren-cong-thong-tin-dien-tu-chinh-phu-102250715114537341.htm
+#   (Click on "TRA CỨU ĐIỂM THI TỐT NGHIỆP THPT 2025 CHƯƠNG TRÌNH 2018")
+#
+# 2. Rename the file to:
+#   ket_qua_thptqg_2025_ct2018.xlsx
+#
+# 3. Save the file to: 
+#   thptqg25-thanh_hoa/data/raw
+# ---------------------------------------------------------------------------
+
 from pathlib import Path
 import pandas as pd
 

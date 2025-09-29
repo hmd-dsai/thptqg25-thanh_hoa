@@ -1,3 +1,12 @@
+# ---------------------------------------------------------------------------
+# PREREQUISITES
+# ---------------------------------------------------------------------------
+# This script depends on the output of `raw_xlsx_to_csv.py`
+#
+# Please run `scripts/raw_xlsx_to_csv.py` first to generate:
+#   data/raw/raw.csv
+# ---------------------------------------------------------------------------
+
 from pathlib import Path
 import pandas as pd
 import numpy as np

@@ -1,4 +1,11 @@
-# PREREQUISITE: Run preprocess.py first
+# ---------------------------------------------------------------------------
+# PREREQUISITES
+# ---------------------------------------------------------------------------
+# This script depends on the output of `preprocess.py`
+#
+# Please run `scripts/preprocess.py` first to generate:
+#   data/raw/preprocessed.csv
+# ---------------------------------------------------------------------------
 
 from pathlib import Path
 import numpy as np
