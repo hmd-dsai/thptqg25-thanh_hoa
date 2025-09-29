@@ -45,6 +45,6 @@ raw_data = pd.concat([raw_data.drop(columns=["MA_NN", "NN"]), lang_score], axis=
 # Add province code column
 raw_data.insert(2, "MA_TINH", raw_data["SBD"].str[:2])
 
-# Return processed CSV file
-out_path = DATA / "processed" / "processed.csv"
+# Return preprocessed CSV file
+out_path = DATA / "raw" / "preprocessed.csv"
 raw_data.to_csv(out_path, index=False)
