@@ -8,8 +8,8 @@
 # ---------------------------------------------------------------------------
 
 from pathlib import Path
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 # Ensure code runs regardless of CWD
 ROOT = Path(__file__).resolve().parent.parent
